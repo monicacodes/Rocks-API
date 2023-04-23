@@ -1,9 +1,9 @@
-require("dotenv").config();
+//require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const PORT = 8000;
-const MongoClient = require("mongodb").MongoClient;
+//const MongoClient = require("mongodb").MongoClient;
 
 app.use(cors());
 app.use(express.json());
@@ -210,11 +210,11 @@ app.use(express.json());
     'fact': ''
 }*/
 
-MongoClient.connect(connectionString)
+/*MongoClient.connect(connectionString)
   .then((client) => {
     console.log("Connected to Database");
     const db = client.db("Rocks-api");
-    const infoCollection = db.collection("Rocks Info");
+    const infoCollection = db.collection("Rocks Info");*/
 
     app.get("/", (req, res) => {
       res.sendFile(__dirname + "/index.html");
@@ -231,7 +231,7 @@ MongoClient.connect(connectionString)
         })
         .catch((error) => console.error(error));
     });
-  })
+  //})
   .catch((error) => console.error(error));
 
 app.listen(process.env.PORT || PORT, () => {
